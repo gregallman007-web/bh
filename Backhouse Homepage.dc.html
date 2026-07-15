@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#16324F;--navy-deep:#12283E;--parchment:#FAF7F2;--card:#ECEEF1;--accent:#E8973A;--accent-deep:#D97D2E;--ink:#1A1A1A;--muted:#4E5C68;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#FAF7F2;color:#1A1A1A;font-family:'Public Sans',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:var(--navy);}
+a:hover{color:var(--accent-deep);}
+a,button{transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .2s ease,box-shadow .25s ease;}
+</style>
+</helmet>
+<div style="background: var(--parchment); color: var(--ink)">
+  <!-- 1. UTILITY BAR + HEADER -->
+  <div data-screen-label="Utility bar" style="background: var(--navy-deep); color: #C8D2DC; font-size: 13px; padding: 8px 24px; display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: center">
+    <a href="index.html" style="color: var(--accent); text-decoration: none; font-weight: 700">&#8592; All concepts</a>
+    <a href="tel:01245893400" style="color: #C8D2DC; text-decoration: none">Chelmsford&nbsp; 01245 893400</a>
+    <a href="tel:01702410880" style="color: #C8D2DC; text-decoration: none">Leigh-on-Sea&nbsp; 01702 410880</a>
+    <a href="mailto:info@backhouse-solicitors.co.uk" style="color: #C8D2DC; text-decoration: none">info@backhouse-solicitors.co.uk</a>
+  </div>
+  <header data-screen-label="Header" ref="{{ headerRef }}" style="position: sticky; top: 0; z-index: 50; background: var(--parchment); border-bottom: 1px solid #E3DDD2; transition: box-shadow .3s ease; padding: 0 clamp(20px, 4vw, 48px)">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 28px; padding: 14px 0">
+      <a href="#" style="text-decoration: none; display: flex; align-items: center; flex: none">
+        <img src="assets/logo-original.webp" alt="Backhouse Solicitors — We've got your back" style="height: 54px; width: auto; display: block">
+      </a>
+      <div style="margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 7px">
+        <nav aria-label="Primary" style="display: flex; align-items: center; gap: 22px; font-size: 13px; font-weight: 500">
+          <a href="#" style="color: var(--muted); text-decoration: none" style-hover="color: var(--accent-deep)">Home</a>
+          <a href="#team" style="color: var(--muted); text-decoration: none" style-hover="color: var(--accent-deep)">About Us</a>
+          <a href="#contact" style="color: var(--muted); text-decoration: none" style-hover="color: var(--accent-deep)">Contact</a>
+          <a href="#contact" style="background: var(--accent); color: var(--navy-deep); text-decoration: none; font-weight: 700; font-size: 13.5px; padding: 9px 18px; border-radius: 3px; white-space: nowrap" style-hover="background: var(--accent-deep); color: #FFF8EF; transform: translateY(-1px); box-shadow: 0 6px 14px rgba(217,125,46,0.3)" style-active="transform: translateY(0)">Book a Free Consultation</a>
+        </nav>
+        <nav aria-label="Services" style="display: flex; align-items: center; gap: 20px; font-size: 14px; font-weight: 600">
+          <a href="#help" style="color: var(--navy); text-decoration: none" style-hover="color: var(--accent-deep)">Employment Law</a>
+          <a href="#help" style="color: var(--navy); text-decoration: none" style-hover="color: var(--accent-deep)">Business Law</a>
+          <a href="#help" style="color: var(--navy); text-decoration: none" style-hover="color: var(--accent-deep)">Commercial Property</a>
+          <a href="#help" style="color: var(--navy); text-decoration: none" style-hover="color: var(--accent-deep)">Dispute Resolution</a>
+          <a href="#help" style="color: var(--navy); text-decoration: none" style-hover="color: var(--accent-deep)">Property Law</a>
+          <a href="#help" style="color: var(--navy); text-decoration: none" style-hover="color: var(--accent-deep)">Wills &amp; Probate</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO -->
+  <section data-screen-label="Hero" style="padding: clamp(40px, 7vw, 96px) clamp(20px, 4vw, 48px) 0">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center">
+      <div>
+        <p style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-deep)">Solicitors in Chelmsford &amp; Leigh-on-Sea</p>
+        <h1 style="margin: 0 0 24px; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(42px, 5.5vw, 72px); line-height: 1.05; letter-spacing: -0.015em; color: var(--navy); text-wrap: balance">Whatever life brings, we&rsquo;ve got your back.</h1>
+        <p style="margin: 0 0 32px; font-size: clamp(17px, 1.4vw, 19px); color: var(--muted); max-width: 32em; text-wrap: pretty">Moving home, a problem at work, planning for the people you love, or a deal to get done &mdash; our family firm of 65+ specialists turns legal worries into sorted outcomes, in plain English.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+          <a href="#contact" style="background: var(--accent); color: var(--navy-deep); text-decoration: none; font-weight: 700; font-size: 15.5px; padding: 15px 28px; border-radius: 3px" style-hover="background: var(--accent-deep); color: #FFF8EF; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(217,125,46,0.35)" style-active="transform: translateY(0)">Book a Free 30-Minute Consultation</a>
+          <a href="#help" style="color: var(--navy); text-decoration: none; font-weight: 600; font-size: 15.5px; padding: 15px 22px; border: 1.5px solid #C9CFD6; border-radius: 3px" style-hover="border-color: var(--accent-deep); color: var(--accent-deep); transform: translateY(-2px)" style-active="transform: translateY(0)">Explore Our Services</a>
+        </div>
+      </div>
+      <figure style="margin: 0">
+        <div style="background: var(--navy); border-radius: 4px; overflow: hidden">
+          <img src="uploads/7A.webp" alt="A solicitor handing the keys to a couple's new home" style="width: 100%; height: auto; display: block; filter: grayscale(100%); mix-blend-mode: luminosity; opacity: 0.92">
+        </div>
+        <figcaption style="margin-top: 10px; font-size: 12.5px; color: var(--muted)">Keys in hand — the outcome, not the paperwork.</figcaption>
+      </figure>
+    </div>
+    <div data-reveal="true" style="max-width: 1280px; margin: clamp(36px, 5vw, 64px) auto 0; border-top: 1px solid #E3DDD2; padding: 22px 0; display: flex; flex-wrap: wrap; gap: 12px 44px; font-size: 14.5px; font-weight: 600; color: var(--navy)">
+      <span><span style="color: var(--accent-deep)">4.9&#9733;</span> Google &mdash; 736 reviews</span>
+      <span>Heritage since 1799</span>
+      <span>65+ legal experts</span>
+      <span>SRA regulated</span>
+    </div>
+  </section>
+
+  <!-- 3. HOW CAN WE HELP -->
+  <section id="help" data-screen-label="How can we help" style="padding: clamp(56px, 8vw, 110px) clamp(20px, 4vw, 48px)">
+    <div style="max-width: 1280px; margin: 0 auto">
+      <div data-reveal="true" style="max-width: 640px; margin-bottom: clamp(32px, 4vw, 56px)">
+        <h2 style="margin: 0 0 14px; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; color: var(--navy)">How can we help?</h2>
+        <p style="margin: 0; color: var(--muted); font-size: 17.5px">Start with what&rsquo;s happening in your life &mdash; we&rsquo;ll take care of the law.</p>
+      </div>
+      <div data-reveal="true" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <a href="#contact" style="display: flex; flex-direction: column; gap: 10px; background: var(--card); border: 1.5px solid transparent; border-radius: 4px; padding: 30px 28px 26px; text-decoration: none; color: var(--ink); transition: border-color .25s ease" style-hover="border-color: var(--accent)">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep)">{{ s.dept }}</span>
+            <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 27px; line-height: 1.15; color: var(--navy)">{{ s.outcome }}</span>
+            <span style="font-size: 15.5px; color: var(--muted); text-wrap: pretty">{{ s.line }}</span>
+            <span style="margin-top: auto; padding-top: 10px; font-weight: 600; font-size: 14.5px; color: var(--navy)">Find out how &#8594;</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY BACKHOUSE -->
+  <section data-screen-label="Why Backhouse" style="background: var(--navy); color: #E8EDF2; padding: clamp(56px, 8vw, 110px) clamp(20px, 4vw, 48px)">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(36px, 5vw, 80px); align-items: center">
+      <div data-reveal="true">
+        <p style="margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent)">Why Backhouse</p>
+        <h2 style="margin: 0 0 28px; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.12; color: #FFFFFF; text-wrap: balance">A law firm that feels on your side, because it is.</h2>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; font-size: 17px">
+          <li style="display: flex; gap: 14px; align-items: baseline"><span style="width: 22px; height: 3px; background: var(--accent); flex: none; transform: translateY(-4px)"></span>Every case starts with a free 30-minute consultation</li>
+          <li style="display: flex; gap: 14px; align-items: baseline"><span style="width: 22px; height: 3px; background: var(--accent); flex: none; transform: translateY(-4px)"></span>Plain English advice &mdash; no legal jargon, ever</li>
+          <li style="display: flex; gap: 14px; align-items: baseline"><span style="width: 22px; height: 3px; background: var(--accent); flex: none; transform: translateY(-4px)"></span>Rapid response when the clock is against you</li>
+          <li style="display: flex; gap: 14px; align-items: baseline"><span style="width: 22px; height: 3px; background: var(--accent); flex: none; transform: translateY(-4px)"></span>Clear fees agreed up front &mdash; no hidden costs</li>
+          <li style="display: flex; gap: 14px; align-items: baseline"><span style="width: 22px; height: 3px; background: var(--accent); flex: none; transform: translateY(-4px)"></span>Local to Chelmsford &amp; Leigh-on-Sea, on your doorstep</li>
+        </ul>
+      </div>
+      <div data-reveal="true" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2A4A6B; border: 1px solid #2A4A6B; border-radius: 4px; overflow: hidden">
+        <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+          <div style="background: var(--navy-deep); padding: clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 36px)">
+            <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(34px, 3.4vw, 48px); color: var(--accent); line-height: 1">{{ st.value }}</div>
+            <div style="margin-top: 8px; font-size: 14.5px; color: #B8C6D3">{{ st.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. REVIEWS -->
+  <section data-screen-label="Reviews" style="padding: clamp(56px, 8vw, 110px) clamp(20px, 4vw, 48px)">
+    <div style="max-width: 1280px; margin: 0 auto">
+      <div data-reveal="true" style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: clamp(32px, 4vw, 56px)">
+        <h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; color: var(--navy); max-width: 14em">Outcomes our clients still talk about</h2>
+        <a href="https://www.google.com/search?q=backhouse+solicitors+reviews" style="font-weight: 600; font-size: 15px; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 3px" style-hover="color: var(--accent-deep)">Read all 736 reviews on Google &#8594;</a>
+      </div>
+      <div data-reveal="true" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+          <figure style="margin: 0; background: var(--card); border-radius: 4px; padding: 32px 30px; display: flex; flex-direction: column; gap: 16px">
+            <div aria-label="5 out of 5 stars" style="color: var(--accent-deep); font-size: 16px; letter-spacing: 2px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 20px; line-height: 1.45; color: var(--navy); text-wrap: pretty">&ldquo;{{ r.quote }}&rdquo;</blockquote>
+            <figcaption style="margin-top: auto; font-size: 14.5px; color: var(--muted)"><strong style="color: var(--ink)">{{ r.name }}</strong> &middot; {{ r.matter }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. TEAM -->
+  <section id="team" data-screen-label="Team" style="padding: 0 clamp(20px, 4vw, 48px) clamp(56px, 8vw, 110px)">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center">
+      <figure data-reveal="true" style="margin: 0">
+        <div style="background: var(--navy); border-radius: 4px; overflow: hidden">
+          <img src="uploads/10.webp" alt="A Backhouse solicitor on-site with a business-owner client in their premises" style="width: 100%; height: auto; display: block; filter: grayscale(100%); mix-blend-mode: luminosity; opacity: 0.92">
+        </div>
+        <figcaption style="margin-top: 10px; font-size: 12.5px; color: var(--muted)">On your side, on your premises — advice where the problem actually lives.</figcaption>
+      </figure>
+      <div data-reveal="true">
+        <p style="margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-deep)">The people behind the promise</p>
+        <h2 style="margin: 0 0 20px; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.12; color: var(--navy); text-wrap: balance">A family firm of 65+ problem-solvers</h2>
+        <p style="margin: 0 0 28px; color: var(--muted); font-size: 17.5px; max-width: 30em; text-wrap: pretty">Founded by Minal Backhouse and incorporating Duffield Stunt Solicitors, established 1799, we&rsquo;ve grown by doing one thing well: treating every client&rsquo;s problem as if it were our own.</p>
+        <a href="#" style="font-weight: 600; font-size: 15px; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 3px" style-hover="color: var(--accent-deep)">Meet Our Team &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CONSULTATION CTA -->
+  <section id="contact" data-screen-label="Free consultation CTA" style="padding: 0 clamp(20px, 4vw, 48px) clamp(56px, 8vw, 110px)">
+    <div data-reveal="true" style="max-width: 1280px; margin: 0 auto; border-top: 3px solid var(--accent); background: #F4EEE3; border-radius: 0 0 4px 4px; padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 72px); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 4vw, 64px); align-items: center">
+      <div>
+        <h2 style="margin: 0 0 16px; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(32px, 3.8vw, 50px); line-height: 1.1; color: var(--navy); text-wrap: balance">Not sure where to start? Start with a conversation.</h2>
+        <p style="margin: 0; color: var(--muted); font-size: 17.5px; max-width: 28em">Thirty minutes, free, no obligation &mdash; just a clear picture of where you stand and what happens next.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <div style="display: flex; flex-wrap: wrap; gap: 14px 40px">
+          <div>
+            <div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted)">Chelmsford</div>
+            <a href="tel:01245893400" style="font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 600; color: var(--navy); text-decoration: none">01245 893400</a>
+          </div>
+          <div>
+            <div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted)">Leigh-on-Sea</div>
+            <a href="tel:01702410880" style="font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 600; color: var(--navy); text-decoration: none">01702 410880</a>
+          </div>
+        </div>
+        <a href="#" style="align-self: start; background: var(--accent); color: var(--navy-deep); text-decoration: none; font-weight: 700; font-size: 15.5px; padding: 15px 28px; border-radius: 3px" style-hover="background: var(--accent-deep); color: #FFF8EF; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(217,125,46,0.35)" style-active="transform: translateY(0)">Book a Free 30-Minute Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. INSIGHTS -->
+  <section data-screen-label="Latest insights" style="padding: 0 clamp(20px, 4vw, 48px) clamp(56px, 8vw, 110px)">
+    <div style="max-width: 1280px; margin: 0 auto">
+      <div data-reveal="true" style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: clamp(28px, 3.5vw, 48px)">
+        <h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(30px, 3.2vw, 42px); color: var(--navy)">Latest insights</h2>
+        <a href="#" style="font-weight: 600; font-size: 15px; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 3px" style-hover="color: var(--accent-deep)">All news &amp; insights &#8594;</a>
+      </div>
+      <div data-reveal="true" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+          <a href="#" style="display: flex; flex-direction: column; gap: 12px; border: 1.5px solid #E3DDD2; border-radius: 4px; padding: 28px 26px; text-decoration: none; color: var(--ink); background: var(--parchment); transition: border-color .25s ease" style-hover="border-color: var(--accent)">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep)">{{ p.tag }}</span>
+            <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 23px; line-height: 1.25; color: var(--navy); text-wrap: balance">{{ p.title }}</span>
+            <span style="margin-top: auto; padding-top: 8px; font-weight: 600; font-size: 14.5px; color: var(--navy)">Read article &#8594;</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8b. FULL SERVICE LIST -->
+  <section data-screen-label="All services" style="padding: 0 clamp(20px, 4vw, 48px) clamp(56px, 8vw, 110px)">
+    <div data-reveal="true" style="max-width: 1280px; margin: 0 auto; border-top: 1px solid #E3DDD2; padding-top: clamp(36px, 5vw, 56px)">
+      <h2 style="margin: 0 0 8px; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(24px, 2.4vw, 30px); color: var(--navy)">Everything we do</h2>
+      <p style="margin: 0 0 28px; color: var(--muted); font-size: 16px; max-width: 40em">Our expert team of solicitors can help you with a wide range of legal issues, including:</p>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px">
+        <sc-for list="{{ allServices }}" as="sv" hint-placeholder-count="10">
+          <li style="display: flex">
+            <a href="#help" style="flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--card); border: 1.5px solid transparent; border-radius: 4px; padding: 14px 18px; color: var(--navy); text-decoration: none; font-weight: 600; font-size: 15px; transition: border-color .25s ease" style-hover="border-color: var(--accent)">
+              <span>{{ sv }}</span>
+              <span aria-hidden="true" style="color: var(--accent-deep); font-size: 15px; flex: none">&#8594;</span>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. FOOTER -->
+  <footer data-screen-label="Footer" style="background: var(--navy-deep); color: #AEBCC9; padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 48px) 32px; font-size: 14.5px">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(32px, 4vw, 56px)">
+      <div>
+        <div style="margin-bottom: 16px; background: #FAF7F2; border-radius: 4px; padding: 10px 14px; display: inline-block">
+          <img src="uploads/pasted-1784109431768-0.webp" alt="Backhouse Solicitors — We've got your back" style="height: 46px; width: auto; display: block">
+        </div>
+        <p style="margin: 0 0 14px; max-width: 24em; text-wrap: pretty">Whatever life brings, we&rsquo;ve got your back. Incorporating Duffield Stunt Solicitors, established 1799.</p>
+        <p style="margin: 0; color: #7E93A6">Proud supporters of Farleigh Hospice, our charity of the year.</p>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent)">Chelmsford</h3>
+        <p style="margin: 0 0 8px">17 Duke Street<br>Chelmsford, Essex CM1 1JU</p>
+        <a href="tel:01245893400" style="color: #E8EDF2; text-decoration: none; font-weight: 600">01245 893400</a>
+        <h3 style="margin: 24px 0 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent)">Leigh-on-Sea</h3>
+        <p style="margin: 0 0 8px">22-24 Elm Road<br>Leigh-on-Sea, Essex SS9 1SN</p>
+        <a href="tel:01702410880" style="color: #E8EDF2; text-decoration: none; font-weight: 600">01702 410880</a>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent)">Legal</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <a href="#" style="color: #AEBCC9; text-decoration: none" style-hover="color: #FFFFFF">Privacy Policy</a>
+          <a href="#" style="color: #AEBCC9; text-decoration: none" style-hover="color: #FFFFFF">Terms of Use</a>
+          <a href="#" style="color: #AEBCC9; text-decoration: none" style-hover="color: #FFFFFF">Complaints Procedure</a>
+          <a href="#" style="color: #AEBCC9; text-decoration: none" style-hover="color: #FFFFFF">Cookie Policy</a>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent)">Follow us</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px">
+          <a href="#" style="color: #AEBCC9; text-decoration: none" style-hover="color: #FFFFFF">LinkedIn</a>
+          <a href="#" style="color: #AEBCC9; text-decoration: none" style-hover="color: #FFFFFF">Facebook</a>
+          <a href="#" style="color: #AEBCC9; text-decoration: none" style-hover="color: #FFFFFF">Instagram</a>
+        </div>
+        <p style="margin: 0; color: #7E93A6; font-size: 13px">Email <a href="mailto:info@backhouse-solicitors.co.uk" style="color: #AEBCC9; text-decoration: none">info@backhouse-solicitors.co.uk</a></p>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 40px auto 0; border-top: 1px solid #24405C; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; color: #7E93A6; font-size: 13px">
+      <span>&copy; 2026 Backhouse Solicitors Ltd. Registered in England &amp; Wales No. 06990670.</span>
+      <span>Authorised and regulated by the Solicitors Regulation Authority, SRA No. 533174.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#E8973A&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#E8973A&quot;, &quot;#D97D2E&quot;, &quot;#C2571B&quot;, &quot;#B08840&quot;], &quot;section&quot;: &quot;Brand&quot; },
+  &quot;navy&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#16324F&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#16324F&quot;, &quot;#12283E&quot;, &quot;#1B3A5C&quot;, &quot;#0F2233&quot;], &quot;section&quot;: &quot;Brand&quot; },
+  &quot;reveal&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot; }
+}">
+class Component extends DCLogic {
+  headerRef = React.createRef();
+  setVars() {
+    const s = document.documentElement.style;
+    s.setProperty('--accent', this.props.accent ?? '#E8973A');
+    s.setProperty('--navy', this.props.navy ?? '#16324F');
+  }
+  componentDidMount() {
+    this.setVars();
+    this._onScroll = () => {
+      const h = this.headerRef.current;
+      if (h) h.style.boxShadow = window.scrollY > 8 ? '0 1px 0 #E3DDD2, 0 8px 24px rgba(18,40,62,0.08)' : 'none';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    if ((this.props.reveal ?? true) && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const els = document.querySelectorAll('[data-reveal]');
+      this._io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this._io.unobserve(e.target); }
+      }), { threshold: 0.1 });
+      els.forEach(el => {
+        el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity .7s ease, transform .7s ease';
+        this._io.observe(el);
+      });
+    }
+  }
+  componentDidUpdate() { this.setVars(); }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+  }
+  renderVals() {
+    return {
+      headerRef: this.headerRef,
+      services: [
+        { dept: 'Property Law', outcome: 'Moving home', line: 'Conveyancing that keeps your move on track — from offer accepted to keys in hand.' },
+        { dept: 'Employment Law — Employees', outcome: 'Problems at work', line: 'Redundancy, unfair treatment or a settlement agreement — know exactly where you stand.' },
+        { dept: 'Employment & Business Law', outcome: 'Protecting your business', line: 'Contracts, people and risk handled properly, so you can get on with running things.' },
+        { dept: 'Wills, Probate & LPAs', outcome: 'Planning for the future', line: 'Wills, powers of attorney and estate planning that protect the people you love.' },
+        { dept: 'Dispute Resolution', outcome: 'Resolving a dispute', line: 'Practical, commercial advice to end disputes quickly — in or out of court.' },
+        { dept: 'Commercial Property', outcome: 'Buying or leasing premises', line: 'From a first lease to a freehold purchase, premises deals done without drama.' }
+      ],
+      stats: [
+        { value: '65+', label: 'Legal experts across two offices' },
+        { value: '4.9\u2605', label: 'From 736 Google reviews' },
+        { value: '1799', label: 'Heritage via Duffield Stunt' },
+        { value: '2', label: 'Essex offices — Chelmsford & Leigh-on-Sea' }
+      ],
+      reviews: [
+        { name: 'George Mustard', matter: 'House move', quote: 'From offer to completion they kept our move on track and kept us calm. We had the keys earlier than we ever expected.' },
+        { name: 'Melanie Francis', matter: 'Workplace issue', quote: 'They explained my settlement agreement in plain English, fought my corner, and got it resolved within a fortnight.' },
+        { name: 'Anthony Rogers', matter: 'Probate', quote: 'At the hardest time for our family, they handled everything with genuine care and never once left us waiting for an answer.' }
+      ],
+      allServices: [
+        'Employment Law for Business',
+        'Employment Law for Individuals',
+        'Commercial Property',
+        'Corporate and Commercial Law',
+        'Business Contracts, Terms and Conditions',
+        'Wills, Probate, Inheritance Tax and Trusts',
+        'Lasting Power of Attorney',
+        'Litigation and Dispute Resolution',
+        'Debt Recovery',
+        'Conveyancing and all aspects of Property Law'
+      ],
+      posts: [
+        { tag: 'Business Law', title: 'Independent Legal Advice Explained: Personal Guarantees' },
+        { tag: 'Property Law', title: 'A Simple Guide to Collective Enfranchisement' },
+        { tag: 'Property Law', title: 'Independent Legal Advice: ID1 and ID2' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
